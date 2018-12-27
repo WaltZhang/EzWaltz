@@ -2,24 +2,20 @@ import smtplib
 from email.message import EmailMessage
 import email.utils
 
-import config
 
-class SSLSmtpMail
-    def __init__(mailhost, port, fromaddr, toaddrs, record, username, password, secure=None):
+class SSLSmtpMail:
+    def __init__(self, mailhost, mailport, fromaddr, toaddrs, username, password, secure=None, timeout=0):
         self.mailhost = mailhost
-        self.port = port
+        self.mailport = mailport
         self.fromaddr = fromaddr
         self.toaddrs = toaddrs
-        self.record = record
         self.username = username
         self.password = password
         self.secure = secure
+        self.timeout = timeout
 
-    def sending_mail(subject, message):
-        port = self.mailport
-        if not port:
-            port = smtplib.SMTP_SSL_PORT
-        smtp = smtplib.SMTP_SSL(self.mailhost, port, timeout=self.timeout)
+    def sending_mail(self, subject, message):
+        smtp = smtplib.SMTP_SSL(self.mailhost, self.mailport, timeout=self.timeout)
         msg = EmailMessage()
         msg['From'] = self.fromaddr
         msg['To'] = ','.join(self.toaddrs)
