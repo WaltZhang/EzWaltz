@@ -10,6 +10,6 @@ setup(
     description='Walt\'s common library for basic usages.',
     author_email='walt.zhangwenguang@gmail.com',
     packages=find_packages(),
-    scripts=['file_messenger/messenger.py'],
+    scripts=['mail/ssl_email.py', 'logger/builder.py', 'logger/handlers.py'],
     zip_safe=False
 )

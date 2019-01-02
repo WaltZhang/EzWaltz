@@ -4,7 +4,7 @@ import email.utils
 
 
 class SSLSmtpMail:
-    def __init__(self, mailhost, mailport, fromaddr, toaddrs, username, password, secure=None, timeout=0):
+    def __init__(self, mailhost, mailport, fromaddr, toaddrs, username, password, secure=None, timeout=5.0):
         self.mailhost = mailhost
         self.mailport = mailport
         self.fromaddr = fromaddr
